@@ -44,15 +44,6 @@ Road-Segmentation using non-learning-based algorithms.
    * 設計低時間複雜度的影像處理流程
    * 避免高成本運算（如大量 convolution 或深層迭代）
 
-4. **嵌入式系統可行性**
-
-   * 確保演算法可在資源受限平台上運行（如 MCU / edge device）
-   * 評估：
-
-     * 推論時間（inference time）
-     * 記憶體使用量
-   * 探討量化（quantization）或簡化計算的可能性
-
 ---
 
 ## 3. 流程
@@ -72,32 +63,44 @@ Road-Segmentation using non-learning-based algorithms.
 
 ## 4. 結果
 
+目前初版的呈現效果如下
 
+<img width="1415" height="297" alt="Image" src="https://github.com/user-attachments/assets/04ec0bf5-dfae-472a-802f-afe666da9f88" />
+
+<img width="1415" height="349" alt="Image" src="https://github.com/user-attachments/assets/efaa1882-0923-4fc7-9d92-4fcb8e5bed98" />
+
+<img width="1415" height="275" alt="Image" src="https://github.com/user-attachments/assets/dbce0c40-4fb0-45de-830d-906e7cb5a588" />
+
+仍有部分圖片是無法正確切割的(如下)，仍需要優化。
+
+<img width="1415" height="315" alt="Image" src="https://github.com/user-attachments/assets/717559fd-da54-4b6b-ae6b-d00940c13424" />
+
+`與 GroundTruth 比較 MSE 仍未進行評估`
 
 ---
 
 ## 5. 優點
 
-(1) 無需訓練（unsupervised）
-(2) 可解釋性高
-(3) 對亮度變化較穩定
-(4) 抗雜訊（block-based）
-(5) 特徵可擴充（HSV / LBP 等）
-(6) 可控制 segmentation 粗細
-(7) 計算簡單，適合硬體實作
+(1) 無需訓練（unsupervised） <br>
+(2) 可解釋性高 <br>
+(3) 對亮度變化較穩定 <br>
+(4) 抗雜訊（block-based） <br>
+(5) 特徵可擴充（HSV / LBP 等） <br>
+(6) 可控制 segmentation 粗細 <br>
+(7) 計算簡單，適合硬體實作 <br>
 
 ---
 
 ## 6. 限制
 
-(1) 忽略空間與結構資訊，判斷純靠顏色分布特徵
-(2) 無法描述紋理
-(3) segmentation 結果有方塊感
-(4) 對參數敏感
-(5) KL divergence 非對稱
-(6) clustering 易陷入局部最佳
-(7) 無語意理解能力
-(8) 對道路 segmentation 容易混淆（灰色物體）
+(1) 忽略空間與結構資訊，判斷純靠顏色分布特徵 <br>
+(2) 無法描述紋理 <br>
+(3) segmentation 結果有方塊感 <br>
+(4) 對參數敏感 <br>
+(5) KL divergence 非對稱 <br>
+(6) clustering 易陷入局部最佳 <br>
+(7) 無語意理解能力 <br>
+(8) 對道路 segmentation 容易混淆（灰色物體） <br>
 
 ---
 
